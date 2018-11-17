@@ -6,7 +6,6 @@ import axios from 'axios'
 import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
 import { withRouter, Link, Route, BrowserRouter} from 'react-router-dom'
 import ButtonJS from './Button'
-import About from './About'
 
 class App extends Component {
   render() {
