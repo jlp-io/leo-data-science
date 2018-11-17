@@ -5,6 +5,9 @@
   "dependencies": {
     "d3": "^5.7.0",
     "d3-fetch": "^1.1.2",
+    "plotly": "^1.0.6",
+    "plotly.js": "^1.42.5",
+    "plotly.js-dist": "^1.42.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
