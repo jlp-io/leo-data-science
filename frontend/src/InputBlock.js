@@ -8,8 +8,6 @@ export default class InputBlock extends Component{
 	super(props);	
     this.state = {
       csvparser: new ParserForParameter(this),
-	  university: this.props.university,
-	  subject: this.props.subject,
       universities: [],
       subjects: [],
       selected: {"subject": "", "university": ""}
@@ -51,15 +49,22 @@ export default class InputBlock extends Component{
   }
 
 	render(){
-		console.log('hi'+this.state.university);
-		console.log('hi'+this.state.subject);
+		let inputForm1;
+		let inputForm2;
+		if (this.props.university == 'true') {
+			inputForm1 = <InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>;
+		}
+		if (this.props.subject == 'true') {
+			inputForm2 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
+		}
+		
 		return(
 			<div>
 				<form onSubmit = {this.handleSubmit}>
           		<button type="submit">Submit</button>
-				<InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>
-				<InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>	
-				</form>
+				{inputForm1}
+				{inputForm2}
+				</form>				
 		  		<input type="file" onChange={this.handleFileGet} ></input>
 			</div>
 		);
