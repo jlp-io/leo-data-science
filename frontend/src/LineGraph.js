@@ -33,6 +33,7 @@ var drawPlot = function() {
     Plotly.plot('plotme', [dataM, dataF, dataB]);
 }
 
+// testing
 var drawMyPlot = function() {
     drawPlotsForSubject(["Imperial College of Science Technology and Medicine", "Aston University"], "Computer science");
 }
