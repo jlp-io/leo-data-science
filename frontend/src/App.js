@@ -34,6 +34,7 @@ class App extends Component {
                 <p style={{textAlign: "center"}}>
 					Search by course
                 </p>             
+
 				<p style={{textAlign: "center"}}>
 				<button className="button-fancy">
 					Search courses
@@ -47,6 +48,7 @@ class App extends Component {
 					Search by course
                 </button>
 				</p>
+				<a href="https://www.facebook.com" className="center-text" ><center>Learn more</center></a>
               </Form>
             </Col>
           </Row>
