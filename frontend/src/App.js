@@ -34,19 +34,19 @@ class App extends Component {
                 <p style={{textAlign: "center"}}>
 					Search by course
                 </p>             
-				<br></br>
+				<p style={{textAlign: "center"}}>
 				<button className="button-fancy">
 					Search courses
                 </button>
-				<br></br>
+				<br></br><br></br>
 				<button className="button-fancy">
 					Search by university
                 </button>
-				<br></br>
+				<br></br><br></br>
 				<button className="button-fancy">
 					Search by course
                 </button>
-				<br></br>
+				</p>
               </Form>
             </Col>
           </Row>
