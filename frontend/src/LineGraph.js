@@ -37,7 +37,7 @@ var drawMyPlot = function() {
     drawPlotsForSubject(["Imperial College of Science Technology and Medicine", "Aston University"], "Computer science");
 }
 
-// draw multiple plots: multiple providers, single subject. default sex average
+// draw multiple plots: multiple providers, single subject. provider should be array.
 var drawPlotsForSubject = function(providers, subject) {
     let traces = [];
     let layout = {
@@ -51,7 +51,7 @@ var drawPlotsForSubject = function(providers, subject) {
     Plotly.plot('plotme', traces, layout);
 }
 
-// draw multiple plots: multiple providers, single subject. default sex average
+// draw multiple plots: one provider, multiple subjects. subjects should be array.
 var drawPlotsForProvider = function(provider, subjects) {
     let traces = [];
     let layout = {
