@@ -46,7 +46,7 @@
 .button-fancy {
     background-color: $button-fancy-background;
     color: $button-font;
-    padding: 2% 6%;
+    padding: 1.5% 5%;
     font-size: 12pt;
     border: 2px solid $button-fancy-background;
     border-bottom: 4px solid $button-fancy-border;
