@@ -73,7 +73,7 @@ var jsonData = [
 	}
 ]
 
-var organiseByInstitution = function(jsonData) {
+var organiseByInstitution = function() {
     var list = {}
     jsonData.forEach(function(row) {
         list[row.providerName] = {"Male": {}, "Female": {}};
@@ -85,17 +85,11 @@ var organiseByInstitution = function(jsonData) {
 
     jsonData.forEach(function(row) {
         let access = list[row.providerName][row.sex][row.subject];
-        access.years.push(row.yearsAfterGraduation);
-        access.earnings.push(row.medianAnnEarn);
+        access.years.push(parseInt(row.yearsAfterGraduation));
+        access.earnings.push(parseInt(row.medianAnnEarn));
     });
 
     return list;
 }
 
-var data = function() {
-    
-
-    console.log(organiseByInstitution(jsonData));
-}
-
-export default data;
+export default organiseByInstitution;
