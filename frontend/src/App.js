@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Typeahead } from 'react-bootstrap-typeahead'
 import axios from 'axios'
-import { Grid, PageHeader, Form, Row, Col } from 'react-bootstrap'
+import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
 import { withRouter } from 'react-router'
 
 class App extends Component {
@@ -28,6 +28,25 @@ class App extends Component {
                 <p style={{textAlign: "center"}}>
 					Search courses
                 </p>
+				<p style={{textAlign: "center"}}>
+					Search by university
+                </p>
+                <p style={{textAlign: "center"}}>
+					Search by course
+                </p>             
+				<br></br>
+				<button className="button-fancy">
+					Search courses
+                </button>
+				<br></br>
+				<button className="button-fancy">
+					Search by university
+                </button>
+				<br></br>
+				<button className="button-fancy">
+					Search by course
+                </button>
+				<br></br>
               </Form>
             </Col>
           </Row>
