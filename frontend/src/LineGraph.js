@@ -34,11 +34,11 @@ var drawPlot = function() {
 }
 
 var drawMyPlot = function() {
-    drawPlots(["Imperial College of Science Technology and Medicine", "Aston University"], "Computer science");
+    drawPlotsForSubject(["Imperial College of Science Technology and Medicine", "Aston University"], "Computer science");
 }
 
 // draw multiple plots: multiple providers, single subject. default sex average
-var drawPlots = function(providers, subject) {
+var drawPlotsForSubject = function(providers, subject) {
     let traces = [];
     let layout = {
         title: "Average earnings by years after graduation"
@@ -46,6 +46,20 @@ var drawPlots = function(providers, subject) {
 
     providers.forEach(function(provider) {
         traces.push(traceSingleLine(provider, "Both", subject, provider))
+    });
+
+    Plotly.plot('plotme', traces, layout);
+}
+
+// draw multiple plots: multiple providers, single subject. default sex average
+var drawPlotsForProvider = function(provider, subjects) {
+    let traces = [];
+    let layout = {
+        title: "Average earnings by years after graduation"
+    }
+
+    subjects.forEach(function(subject) {
+        traces.push(traceSingleLine(provider, "Both", subject, subject))
     });
 
     Plotly.plot('plotme', traces, layout);
