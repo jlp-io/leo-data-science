@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputForm from "./inputForm";
 import ParserForParameter from "./parseForParameters.js";
 
+
 export default class InputBlock extends Component{
 	
 	constructor(props){
@@ -56,7 +57,7 @@ export default class InputBlock extends Component{
           			<InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>
           			<button type="submit">Submit</button>
           		</form>
-          		<input type="file" onChange={this.handleFileGet} ></input>
+          <input type = "file" onChange = {this.handleFileGet}></input>    
 			</div>
 		);
 	}

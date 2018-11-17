@@ -1,5 +1,4 @@
-//import fs from 'fs';
-import App from "./App.js"
+
 
 export default class ParserForParameter{
 	constructor(app){
@@ -10,12 +9,20 @@ export default class ParserForParameter{
 	}
 
 	getCSVString(dataFile){
-		/*var fs = require('fs').default;
-		var wholeString = fs.readFileSync(dataFile);
-		this.csvData = wholeString.substring(wholeString.indexOf("/n"));
-		console.log(this.csvData.substring(0, 10));*/
+		/*var fs = require('fs');
+		var wholeString = fs.readFileSync("./SFR18_2017_Institution_subject_data.csv", 'utf8');
+		this.csvData = wholeString.substring(wholeString.indexOf("prAttIncluded") + "prAttIncluded".length);
+		this.parse();
+		this.app.rerender();*/
+		/*var fs = require('fs');
+		fs.readFile("./SFR18_2017_Institution_subject_data.csv", function(err, data){
+			var wholeString = data;
+			this.csvData = wholeString.substring(wholeString.indexOf("prAttIncluded") + "prAttIncluded".length);
+			this.parse();
+			this.app.rerender();
+		}.bind(this));*/
+
 		var reader = new FileReader();
-		var parse = this.parse;
 		reader.onload = function(e) {
   			var wholeString = reader.result;
   			this.csvData = wholeString.substring(wholeString.indexOf("prAttIncluded") + "prAttIncluded".length);

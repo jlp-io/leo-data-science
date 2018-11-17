@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import InputForm from "./inputForm";
 import ParserForParameter from "./parseForParameters.js";
 import InputBlock from "./InputBlock"
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-bootstrap/dist/react-bootstrap.js';
+import 'jquery/dist/jquery.js';
+import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
+import 'react-bootstrap-typeahead/dist/react-bootstrap-typeahead.js'
 //import fs, {readFileSync} from "fs";
 
 class App extends Component {
