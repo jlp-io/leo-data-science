@@ -7,6 +7,7 @@ import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
 import { withRouter, Link, Route, BrowserRouter} from 'react-router-dom'
 import ButtonJS from './Button'
 import About from './About'
+import InputBlock from './InputBlock'
 
 class App extends Component {
 
@@ -14,16 +15,21 @@ class App extends Component {
 	  super(props)
 	  this.state = {
 		  searchType: "",
+		  university: false,
+		  subject: false
 	  }
   }
 
   changeSearchType(changeSearch) {
 	  if (changeSearch == 'singleSearch') {
-		this.setState({searchType: 'single'})
-		//call form component and pass in searchType as prop
+		this.setState({searchType: 'single'});
+		this.setState({university: 'true'});
+		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'courseSearch') {
 		this.setState({searchType: 'course'})
+		this.setState({university: 'false'});
+		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'universitySearch') {
 		this.setState({searchType: 'university'})
@@ -31,6 +37,8 @@ class App extends Component {
 		.then(function (response) {
 		console.log(response.data);
 		})
+		this.setState({university: 'true'});
+		this.setState({subject: 'false'});
 	  }
   }
 
@@ -86,6 +94,9 @@ class App extends Component {
 				</Button>
             </Col>
           </Row>
+		  <InputBlock university={this.state.university} subject={this.state.subject} />
+		  <p>{this.state.university}</p>
+		  <p>{this.state.subject}</p>
 		  
           <Row>
             <Col xs={6} sm={6} md={6}>

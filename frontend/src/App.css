@@ -46,7 +46,7 @@
 .button-fancy {
     background-color: $button-fancy-background;
     color: $button-font;
-    padding: 1.5% 5%;
+    padding: 1.2% 5%;
     font-size: 12pt;
     border: 2px solid $button-fancy-background;
     border-bottom: 4px solid $button-fancy-border;
@@ -54,6 +54,7 @@
     letter-spacing: 1px;
 }
 
+/*
 .button-fancy:hover {
 	background-color: $button-fancy-hover;
 	color: $button-font;
@@ -66,6 +67,7 @@
     -o-transition: all 0.15s ease-in;
     transition: all 0.15s ease-in;
 }
+*/
 
 /**************************************************************** CUSTOM BUTTON WITH IMAGE *****************************************************/
 /* Trashcan button styling */
