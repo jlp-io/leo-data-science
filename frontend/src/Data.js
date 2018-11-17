@@ -148,7 +148,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -173,7 +173,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -198,7 +198,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -223,7 +223,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -248,7 +248,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -273,7 +273,7 @@ var jsonData = [
     },
     
     {
-		"UKPRN": "10003270",
+		"UKPRN": "10003272",
 		"providerName": "Aston University",
 		"Region": "London",
 		"subject": "Computer science",
@@ -299,8 +299,10 @@ var jsonData = [
 ]
 
 var organiseByInstitution = function() {
-    var list = {}
+    var list = {};
+    var index = {};
     jsonData.forEach(function(row) {
+        index[row.UKPRN] = row.providerName;
         list[row.providerName] = {"Male": {}, "Female": {}, "Both": {}};
     });
 
@@ -329,6 +331,8 @@ var organiseByInstitution = function() {
         }
     }
 
+    console.log(index);
+    console.log(list);
     return list;
 }
 
