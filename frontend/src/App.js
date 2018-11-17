@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import InputForm from "./inputForm";
+import ParserForParameter from "./parseForParameters.js";
+import InputBlock from "./InputBlock"
+//import fs, {readFileSync} from "fs";
 
 class App extends Component {
+
+
   render() {
+
+    //var csvparser = new ParserForParameter();
+    //csvparser.getCSVString("SFR18_2017_Institution_subject_data.csv");
     return (
       <div className="App">
         <header className="App-header">
@@ -20,6 +29,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <InputBlock/>
       </div>
     );
   }
