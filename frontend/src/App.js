@@ -9,6 +9,31 @@ import ButtonJS from './Button'
 import About from './About'
 
 class App extends Component {
+
+  constructor(props) {
+	  super(props)
+	  this.state = {
+		  searchType: "",
+	  }
+  }
+
+  changeSearchType(changeSearch) {
+	  if (changeSearch == 'singleSearch') {
+		this.setState({searchType: 'single'})
+		//call form component and pass in searchType as prop
+	  }
+	  if (changeSearch == 'courseSearch') {
+		this.setState({searchType: 'course'})
+	  }
+	  if (changeSearch == 'universitySearch') {
+		this.setState({searchType: 'university'})
+		axios.get('https://api.github.com/users/jlp-io/orgs')
+		.then(function (response) {
+		console.log(response.data);
+		})
+	  }
+  }
+
   render() {
     return (
 	<header className="App-header">
@@ -26,7 +51,6 @@ class App extends Component {
           </Row>
           <Row>
             <Col sm={12} md={12}>
-              <Form>
                 <p style={{textAlign: "center"}}>
 					Search courses
                 </p>
@@ -35,21 +59,21 @@ class App extends Component {
                 </p>
                 <p style={{textAlign: "center"}}>
 					Search by course
-                </p>             
-
+                </p>
+				
+				<p>Search type: {this.state.searchType}</p>
+				
+				<p>{this.state.currentTime}</p>
 				<p style={{textAlign: "center"}}>
-				<button className="button-fancy">
+				<button className="button-fancy" onClick={()=>this.changeSearchType('singleSearch')}>
 					Search courses
                 </button>
 				<br></br><br></br>
-				<button className="button-fancy">
+				<button className="button-fancy" onClick={()=>this.changeSearchType('universitySearch')}>
 					Search by university
                 </button>
 				<br></br><br></br>
-				<button className="button-fancy" 
-				onClick={() => {
-                window.history.push('/about')
-				}}>
+				<button className="button-fancy" onClick={()=>this.changeSearchType('courseSearch')}>
 				Search by course
                 </button>
 				</p>
@@ -60,11 +84,9 @@ class App extends Component {
 				href="https://www.facebook.com"
 				>Link
 				</Button>
-				<a href="https://www.facebook.com" className="center-text" ><center>Learn more</center></a>
-              </Form>
             </Col>
           </Row>
-
+		  
           <Row>
             <Col xs={6} sm={6} md={6}>
             </Col>

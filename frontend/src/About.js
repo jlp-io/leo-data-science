@@ -6,8 +6,18 @@ import axios from 'axios'
 import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
 import { withRouter, Link, Route, BrowserRouter} from 'react-router-dom'
 import ButtonJS from './Button'
+import { Document, Page } from 'react-pdf';
 
-class App extends Component {
+
+class About extends Component {
+
+  constructor(props) {
+	  super(props)
+	  this.state = {
+		  
+	  }
+  }
+  
   render() {
     return (
 	<header className="App-header">
@@ -25,16 +35,16 @@ class App extends Component {
           </Row>
           <Row>
             <Col sm={12} md={12}>
-              <Form>
                 <p style={{textAlign: "center"}}>
 					About our project
                 </p>
 				<p style={{textAlign: "center"}}>
 					Sample text
                 </p>
-              </Form>
             </Col>
           </Row>
+		  
+		  <embed src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/718225/SFR_18_2017_LEO_mainText.pdf" width="700" height="600" type='application/pdf' />
 
           <Row>
             <Col xs={6} sm={6} md={6}>
@@ -49,4 +59,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default About;
