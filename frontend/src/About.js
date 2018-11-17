@@ -27,39 +27,11 @@ class App extends Component {
             <Col sm={12} md={12}>
               <Form>
                 <p style={{textAlign: "center"}}>
-					Search courses
+					About our project
                 </p>
 				<p style={{textAlign: "center"}}>
-					Search by university
+					Sample text
                 </p>
-                <p style={{textAlign: "center"}}>
-					Search by course
-                </p>             
-
-				<p style={{textAlign: "center"}}>
-				<button className="button-fancy">
-					Search courses
-                </button>
-				<br></br><br></br>
-				<button className="button-fancy">
-					Search by university
-                </button>
-				<br></br><br></br>
-				<button className="button-fancy" 
-				onClick={() => {
-                window.history.push('/about')
-				}}>
-				Search by course
-                </button>
-				</p>
-				<Button
-				bsStyle="danger"
-                name="Edit"
-                url="output"
-				href="https://www.facebook.com"
-				>Link
-				</Button>
-				<a href="https://www.facebook.com" className="center-text" ><center>Learn more</center></a>
               </Form>
             </Col>
           </Row>
