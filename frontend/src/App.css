@@ -54,6 +54,18 @@
     letter-spacing: 1px;
 }
 
+.button-fancy-submit {
+    background-color: $button-fancy-background;
+    color: $button-font;
+    padding: 0.2% 3%;
+    font-size: 12pt;
+    border: 2px solid $button-fancy-background;
+    border-bottom: 4px solid $button-fancy-border;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+
 /*
 .button-fancy:hover {
 	background-color: $button-fancy-hover;

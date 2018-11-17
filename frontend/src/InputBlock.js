@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputForm from "./InputForm";
 import ParserForParameter from "./parseForParameters.js";
+import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 
 export default class InputBlock extends Component{
 	
@@ -51,21 +52,27 @@ export default class InputBlock extends Component{
 	render(){
 		let inputForm1;
 		let inputForm2;
+		let inputForm3;
+		let inputForm4;
 		if (this.props.university == 'true') {
 			inputForm1 = <InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>;
+			inputForm3 = <input type="file" onChange={this.handleFileGet} ></input>
+			inputForm4 = <button className="button-fancy-submit" type="submit">Submit</button>
 		}
 		if (this.props.subject == 'true') {
 			inputForm2 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
+			inputForm3 = <input type="file" onChange={this.handleFileGet} ></input>
+			inputForm4 = <Link to={`/about`}><button className="button-fancy-submit" type="submit">Submit</button></Link>
 		}
 		
 		return(
 			<div>
 				<form onSubmit = {this.handleSubmit}>
-          		<button type="submit">Submit</button>
 				{inputForm1}
 				{inputForm2}
+				{inputForm3}
+				{inputForm4}
 				</form>				
-		  		<input type="file" onChange={this.handleFileGet} ></input>
 			</div>
 		);
 	}

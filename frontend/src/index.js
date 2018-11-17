@@ -10,16 +10,12 @@ ReactDOM.render(
   <Router>
     <div>
       <aside>
-		<button className="button-fancy">
-        <Link to={`/`}>App</Link>
-		</button>
-		<button className="button-fancy">
-        <Link to={`/about`}>About</Link>
-		</button>
+        <Link to={`/`}><button className="button-fancy" type="submit">App</button></Link>		
+        <Link to={`/about`}><button className="button-fancy" type="submit">About</button></Link>
       </aside>
       <main>
         <Route exact path="/" component={App} />
-        <Route path="/about" component={About} />
+        <Route path="/about" render={(props) => <About {...props} isAuthed={true} />} /> 
       </main>
     </div>
   </Router>,
