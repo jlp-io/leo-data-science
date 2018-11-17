@@ -25,45 +25,34 @@ var traceSingleLine = function(provider, sex, subject, name) {
     return trace;
 }
 
-var drawPlot = function() {
-    let dataM = traceSingleLine("Imperial College of Science Technology and Medicine", "Male", "Computer science", "Males");
-    let dataF = traceSingleLine("Imperial College of Science Technology and Medicine", "Female", "Computer science", "Females");
-    let dataB = traceSingleLine("Imperial College of Science Technology and Medicine", "Both", "Computer science", "Average");
-    console.log(data);
-    Plotly.plot('plotme', [dataM, dataF, dataB]);
-}
-
 // testing
 var drawMyPlot = function() {
-    drawPlotsForSubject(["Imperial College of Science Technology and Medicine", "Aston University"], "Computer science");
+    let providers = ["Imperial College of Science Technology and Medicine", "Aston University"]
+    let subjects = ["Computer science"];
+    drawPlots(providers, subjects, 'plotme');
 }
 
-// draw multiple plots: multiple providers, single subject. provider should be array.
-var drawPlotsForSubject = function(providers, subject) {
+//
+// providers: an array containing provider names. MUST be an array
+// subjects: an array containing subjects. MUST be an array
+// divid: the id of the div where the plot should be rendered
+var drawPlots = function(providers, subjects, divid) {
+    if (!divid) {
+        divid = "body";
+    }
+    
     let traces = [];
     let layout = {
         title: "Average earnings by years after graduation"
     }
 
     providers.forEach(function(provider) {
-        traces.push(traceSingleLine(provider, "Both", subject, provider))
+        subjects.forEach(function(subject) {
+            traces.push(traceSingleLine(provider, "Both", subject, provider + " (" + subject + ")"))
+        })
     });
 
-    Plotly.plot('plotme', traces, layout);
-}
-
-// draw multiple plots: one provider, multiple subjects. subjects should be array.
-var drawPlotsForProvider = function(provider, subjects) {
-    let traces = [];
-    let layout = {
-        title: "Average earnings by years after graduation"
-    }
-
-    subjects.forEach(function(subject) {
-        traces.push(traceSingleLine(provider, "Both", subject, subject))
-    });
-
-    Plotly.plot('plotme', traces, layout);
+    Plotly.plot(divid, traces, layout);
 }
 
 export default drawMyPlot;
