@@ -313,6 +313,7 @@ var organiseByInstitution = function() {
 
     jsonData.forEach(function(row) {
         let access = list[row.providerName][row.sex][row.subject];
+		console.log(access);
         access.years.push(parseInt(row.yearsAfterGraduation));
         access.earnings.push(parseInt(row.medianAnnEarn));
     });
@@ -330,9 +331,6 @@ var organiseByInstitution = function() {
             }
         }
     }
-
-    console.log(index);
-    console.log(list);
     return list;
 }
 

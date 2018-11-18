@@ -3,26 +3,24 @@ import logo from './logo.svg';
 import drawMyPlot from './LineGraph.js';
 
 class Graph extends Component {
+	
+	constructor(props) {
+	  super(props)
+	  this.state = {
+		  hideButton: false
+	  }
+	}
+
+  
  render() {
    return (
      <div id="plotme" className="Graph">
-       <header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" />
-         <p>
-           Edit <code>src/App.js</code> and save to reload.
-         </p>
-         <a
-           className="App-link"
-           href="https://reactjs.org"
-           target="_blank"
-           rel="noopener noreferrer"
-         >
-           Learn React
-         </a>
-       </header>
-       <button onClick={drawMyPlot}> Click me </button>
+	 <header className="App-header">
+ 	   <a href="#" style={{textAlign: "center"}}>
+		<button className="button-fancy" onClick={drawMyPlot}> Click me </button>
+		</a>
+     </header>
      </div>
-
    );
  }
 }
