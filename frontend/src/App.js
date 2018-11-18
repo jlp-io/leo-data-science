@@ -122,7 +122,6 @@ class App extends Component {
         </Grid>
       </div>
 	  </header>
-    <InputBlock/>
 	  );
   }
 }
