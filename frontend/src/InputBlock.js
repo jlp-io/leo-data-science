@@ -11,7 +11,8 @@ export default class InputBlock extends Component{
       csvparser: new ParserForParameter(this),
       universities: [],
       subjects: [],
-      selected: {"subject": "", "university": ""}
+      selected: {"subject": "", "university": ""},
+      relevantData: {}
     }
     this.handleFileGet = this.handleFileGet.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +37,9 @@ export default class InputBlock extends Component{
   	event.preventDefault();
   	var toReturn = this.state.selected;
   	console.log(toReturn);
+  	var relData = this.state.csvparser.retrieveData(toReturn);
+    console.log(relData);
+    this.setState({relevantData: relData});	
   	return toReturn;
   }
 
@@ -47,7 +51,7 @@ export default class InputBlock extends Component{
       universities : unis,
       subjects: subs
     });
-  }
+	}
 
 	render(){
 		let inputForm1;
