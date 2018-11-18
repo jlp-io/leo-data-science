@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import About from './About';
+import Graph from './Graph';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
@@ -12,10 +13,12 @@ ReactDOM.render(
       <aside>
         <Link to={`/`}><button className="button-fancy" type="submit">App</button></Link>		
         <Link to={`/about`}><button className="button-fancy" type="submit">About</button></Link>
+        <Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link>
       </aside>
       <main>
         <Route exact path="/" component={App} />
         <Route path="/about" render={(props) => <About {...props} isAuthed={true} />} /> 
+        <Route exact path="/graph" component={Graph} /> 
       </main>
     </div>
   </Router>,

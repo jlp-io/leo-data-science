@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InputForm from "./InputForm.js";
+import InputForm from './InputForm';
 import ParserForParameter from "./parseForParameters.js";
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 

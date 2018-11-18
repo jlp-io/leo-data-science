@@ -17,6 +17,7 @@ import About from './About'
 import InputBlock from './InputBlock'
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
+import Graph from './Graph'
 
 class App extends Component {
 
