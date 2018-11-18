@@ -34,7 +34,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-	  axios.get('127.0.0.1:8000/users/').then(function(response) { console.log(response.status_code)});
+	  axios.get('-u jamie:password http://127.0.0.1:8000/users/').then(function(response) { console.log(response.data)});
  	  axios.get('https://api.github.com/users/jlp-io/orgs').then(function(response) { console.log(response.data)});
   }
 

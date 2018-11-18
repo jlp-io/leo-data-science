@@ -34,17 +34,6 @@ class About extends Component {
           </Row>
 	      <Row>
             <Col sm={12} md={12}>
-                <h3>
-					About our project
-                </h3>
-				<small>
-					The LEO dataset visualizes earnings outcomes with a methodology that is fundamentally different than conventional approaches like the DLHE survey, which rely on
-					unverified survey data with low sample sizes to inform prospective undergraduates and policymakers about the performance of our higher education sector.
-				</small>
-				<br></br>
-				<small>
-					We hope that building a website where this information can be easily viewed that people will be more informed when comparing different university courses.
-				</small>
             </Col>			
           </Row>
 		  
