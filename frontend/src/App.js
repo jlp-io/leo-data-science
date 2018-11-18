@@ -112,10 +112,7 @@ class App extends Component {
             </Col>
             <Col xs={6} sm={6} md={6} className="bs-button-right">
             </Col>
-          </Row>
-		<div id="plotme" className="Graph">
-		<Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link>
-		</div>
+          </Row>		
         </Grid>
       </div>
 	  </header>

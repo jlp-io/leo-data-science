@@ -58,15 +58,18 @@ export default class InputBlock extends Component{
 		let inputForm2;
 		let inputForm3;
 		let inputForm4;
+		let inputForm5;
 		if (this.props.university == 'true') {
 			inputForm1 = <InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>;
 			inputForm3 = <input type="file" onChange={this.handleFileGet} ></input>
 			inputForm4 = <button className="button-fancy-submit" type="submit">Submit</button>
+			inputForm5 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>
 		}
 		if (this.props.subject == 'true') {
 			inputForm2 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
 			inputForm3 = <input type="file" onChange={this.handleFileGet} ></input>
 			inputForm4 = <Link to={`/about`}><button className="button-fancy-submit" type="submit">Submit</button></Link>
+			inputForm5 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>
 		}
 		
 		return(
@@ -76,7 +79,8 @@ export default class InputBlock extends Component{
 				{inputForm2}
 				{inputForm3}
 				{inputForm4}
-				</form>				
+				{inputForm5}
+				</form>					
 			</div>
 		);
 	}
