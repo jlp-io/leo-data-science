@@ -1,0 +1,37 @@
+[
+{
+  "root": "dist/"
+}
+{
+    "encoding": "US-ASCII"
+}
+{
+  "clean_urls": true
+}
+{
+  "logging": {
+    "access": false,
+    "error": "warn"
+  }
+}
+{
+  "routes": {
+    "/*.html": "index.html",
+    "/route/**": "bar/baz.html"
+  }
+}
+{
+  "routes": {
+    "/assets/*": "/assets/",
+    "/**": "index.html"
+  }
+}
+{
+  "redirects": {
+    "/old/gone/": {
+      "url": "/",
+      "status": 302
+    }
+  }
+}
+]

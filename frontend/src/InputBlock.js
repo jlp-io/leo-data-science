@@ -68,8 +68,8 @@ export default class InputBlock extends Component {
 		if (this.props.subject == 'true') {
 			inputForm2 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
 			inputForm3 = <input type="file" onChange={this.handleFileGet} ></input>
-			inputForm4 = <Link to={`/about`}><button className="button-fancy-submit" type="submit">Submit</button></Link>
-			inputForm5 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>
+			inputForm4 = <Link to={`/graph`}><button className="button-fancy-submit" type="submit">Submit</button></Link>
+			{/*inputForm5 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>*/}
 		}
 		
 		return(
