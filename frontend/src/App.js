@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import ParserForParameter from "./parseForParameters.js";
-import InputBlock from "./InputBlock"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-bootstrap/dist/react-bootstrap.js';
 import 'jquery/dist/jquery.js';
