@@ -9,6 +9,7 @@ import ButtonJS from './Button'
 import About from './About'
 import InputBlock from './InputBlock'
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 class App extends Component {
 
@@ -89,7 +90,7 @@ class App extends Component {
 				<br></br><br></br>
 				<button className="button-fancy" onClick={()=>this.changeSearchType('courseSearch')}>
 				Search by course
-                </button>
+				</button>
 				<InputBlock university={this.state.university} subject={this.state.subject} />				
 				</p>
 				<Button
@@ -107,7 +108,7 @@ class App extends Component {
             <Col xs={6} sm={6} md={6} className="bs-button-right">
             </Col>
           </Row>
-		  <button onClick={drawMyPlot}>Click here</button>
+		  {/*<button onClick={drawMyPlot}>Click here</button>*/}
         </Grid>
       </div>
 	  </header>

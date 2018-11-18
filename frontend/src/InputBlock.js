@@ -6,7 +6,7 @@ import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-d
 export default class InputBlock extends Component{
 	
 	constructor(props){
-	super(props);	
+	super(props);
     this.state = {
       csvparser: new ParserForParameter(this),
       universities: [],
