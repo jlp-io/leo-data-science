@@ -3,7 +3,7 @@ import InputForm from './InputForm';
 import ParserForParameter from "./parseForParameters.js";
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 
-export default class InputBlock extends Component{
+export default class InputBlock extends Component {
 	
 	constructor(props){
 	super(props);

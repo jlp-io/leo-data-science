@@ -34,7 +34,8 @@ class App extends Component {
   }
   
   componentDidMount() {
-	  axios.get('http://tomcat.cs.stir.ac.uk:8080/jpa/SignInPage').then(function(response) { console.log(response.data)});
+	  axios.get('127.0.0.1:8000/users/').then(function(response) { console.log(response.status_code)});
+ 	  axios.get('https://api.github.com/users/jlp-io/orgs').then(function(response) { console.log(response.data)});
   }
 
   changeSearchType(changeSearch) {
