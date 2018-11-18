@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import ParserForParameter from "./parseForParameters.js";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-bootstrap/dist/react-bootstrap.js';
+import 'jquery/dist/jquery.js';
+import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
+import 'react-bootstrap-typeahead/dist/react-bootstrap-typeahead.js'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import axios from 'axios'
 import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
@@ -49,8 +56,10 @@ class App extends Component {
 		this.setState({subject: 'false'});
 	  }
   }
-
   render() {
+
+    //var csvparser = new ParserForParameter();
+    //csvparser.getCSVString("SFR18_2017_Institution_subject_data.csv");
     return (
 	<header className="App-header">
 	<div className="page-body-grey">
