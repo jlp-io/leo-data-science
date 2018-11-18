@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Typeahead} from 'react-bootstrap-typeahead';
 
 export default class InputForm extends Component{
 	constructor(props){
@@ -9,8 +10,8 @@ export default class InputForm extends Component{
 		this.handleChangeValue = this.handleChangeValue.bind(this);
 	}
 
-	handleChangeValue(event){
-		this.props.handleSubmitChange(this.props.id, event.target.value);
+	handleChangeValue(selected){
+		this.props.handleSubmitChange(this.props.id, selected);
 	}
 
 	render(){
@@ -26,10 +27,8 @@ export default class InputForm extends Component{
 				<div className = "input-group-prepend">
 					<label className = "input-group-text">{this.props.selectionParameter}</label>
 				</div>
-				<select className = "custom-select" onChange = {this.handleChangeValue}>
-					<option selected>Any</option>
-					{inputsIn()}
-				</select>
+				<Typeahead className = "custom-select" onChange = {(selected) => {this.handleChangeValue(selected[0])}} options = {this.props.options}>
+				</Typeahead>
 			</div>
 			);
 	}
