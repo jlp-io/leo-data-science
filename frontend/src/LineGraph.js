@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import data from './Data'
 import Plotly from 'plotly.js-dist';
 
-
 var traceSingleLine = function(provider, sex, subject, name) {
     
     if (!name) {

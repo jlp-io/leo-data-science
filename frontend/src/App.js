@@ -12,9 +12,12 @@ import 'react-bootstrap-typeahead/dist/react-bootstrap-typeahead.js'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import axios from 'axios'
 import { Grid, PageHeader, Form, Row, Col, Button } from 'react-bootstrap'
-import { withRouter, Link, Route, BrowserRouter} from 'react-router-dom'
+import drayMyPlot from './LineGraph.js'
 import ButtonJS from './Button'
 import About from './About'
+import InputBlock from './InputBlock'
+import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 class App extends Component {
 
@@ -22,16 +25,27 @@ class App extends Component {
 	  super(props)
 	  this.state = {
 		  searchType: "",
+		  university: false,
+		  subject: false,
+		  csvFile: 'https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/619435/SFR18_2017_Institution_subject_data.csv',
+		  metadataFile: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/618557/SFR18_2017_metadata.txt'
 	  }
+  }
+  
+  componentDidMount() {
+	  //axios.get('127.0.0.5/getDataSet').then(function(response) { console.log(repsonse.data);});
   }
 
   changeSearchType(changeSearch) {
 	  if (changeSearch == 'singleSearch') {
-		this.setState({searchType: 'single'})
-		//call form component and pass in searchType as prop
+		this.setState({searchType: 'single'});
+		this.setState({university: 'true'});
+		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'courseSearch') {
 		this.setState({searchType: 'course'})
+		this.setState({university: 'false'});
+		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'universitySearch') {
 		this.setState({searchType: 'university'})
@@ -39,6 +53,8 @@ class App extends Component {
 		.then(function (response) {
 		console.log(response.data);
 		})
+		this.setState({university: 'true'});
+		this.setState({subject: 'false'});
 	  }
   }
   render() {
@@ -61,6 +77,7 @@ class App extends Component {
           </Row>
           <Row>
             <Col sm={12} md={12}>
+				{/*
                 <p style={{textAlign: "center"}}>
 					Search courses
                 </p>
@@ -70,10 +87,8 @@ class App extends Component {
                 <p style={{textAlign: "center"}}>
 					Search by course
                 </p>
-				
-				<p>Search type: {this.state.searchType}</p>
-				
-				<p>{this.state.currentTime}</p>
+				*/}
+
 				<p style={{textAlign: "center"}}>
 				<button className="button-fancy" onClick={()=>this.changeSearchType('singleSearch')}>
 					Search courses
@@ -85,24 +100,25 @@ class App extends Component {
 				<br></br><br></br>
 				<button className="button-fancy" onClick={()=>this.changeSearchType('courseSearch')}>
 				Search by course
-                </button>
+				</button>
+				<InputBlock university={this.state.university} subject={this.state.subject} />				
 				</p>
 				<Button
 				bsStyle="danger"
                 name="Edit"
                 url="output"
 				href="https://www.facebook.com"
-				>Link
+				>link
 				</Button>
             </Col>
           </Row>
-		  
           <Row>
             <Col xs={6} sm={6} md={6}>
             </Col>
             <Col xs={6} sm={6} md={6} className="bs-button-right">
             </Col>
           </Row>
+		  {/*<button onClick={drawMyPlot}>Click here</button>*/}
         </Grid>
       </div>
 	  </header>
