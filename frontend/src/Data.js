@@ -89,8 +89,8 @@ var jsonData = [
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
 		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "35000",
-		"upperAnnEarn": "75900",
+		"medianAnnEarn": "40000",
+		"upperAnnEarn": "47300",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -113,9 +113,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "50100",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "39800",
+		"medianAnnEarn": "52000",
+		"upperAnnEarn": "60000",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -139,7 +139,7 @@ var jsonData = [
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
 		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "105000",
+		"medianAnnEarn": "60200",
 		"upperAnnEarn": "75900",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
@@ -163,9 +163,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "10500",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "19300",
+		"medianAnnEarn": "25600",
+		"upperAnnEarn": "29200",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -188,9 +188,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "25000",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "21500",
+		"medianAnnEarn": "28000",
+		"upperAnnEarn": "32800",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -213,9 +213,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "40000",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "20800",
+		"medianAnnEarn": "29900",
+		"upperAnnEarn": "42300",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -238,9 +238,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "12000",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "14800",
+		"medianAnnEarn": "20100",
+		"upperAnnEarn": "28100",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -263,9 +263,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "29000",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "13500",
+		"medianAnnEarn": "25400",
+		"upperAnnEarn": "32800",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -288,9 +288,9 @@ var jsonData = [
 		"sustEmp": "x",
 		"sustEmpFSorBoth": "x",
 		"earningsInclude": "35",
-		"lowerAnnEarn": "31500",
-		"medianAnnEarn": "40000",
-		"upperAnnEarn": "75900",
+		"lowerAnnEarn": "20000",
+		"medianAnnEarn": "32000",
+		"upperAnnEarn": "36000",
 		"POLARGrpOne": "x",
 		"POLARGrpOneIncluded": "x",
 		"prAttBand": "x",
@@ -313,6 +313,7 @@ var organiseByInstitution = function() {
 
     jsonData.forEach(function(row) {
         let access = list[row.providerName][row.sex][row.subject];
+		console.log(access);
         access.years.push(parseInt(row.yearsAfterGraduation));
         access.earnings.push(parseInt(row.medianAnnEarn));
     });
@@ -330,9 +331,6 @@ var organiseByInstitution = function() {
             }
         }
     }
-
-    console.log(index);
-    console.log(list);
     return list;
 }
 

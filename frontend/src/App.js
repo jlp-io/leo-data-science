@@ -17,6 +17,8 @@ import About from './About'
 import InputBlock from './InputBlock'
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
+import Graph from './Graph'
+import drawMyPlot from './LineGraph.js';
 
 class App extends Component {
 
@@ -32,7 +34,8 @@ class App extends Component {
   }
   
   componentDidMount() {
-	  //axios.get('127.0.0.5/getDataSet').then(function(response) { console.log(repsonse.data);});
+	  axios.get('-u jamie:password http://127.0.0.1:8000/users/').then(function(response) { console.log(response.data)});
+ 	  axios.get('https://api.github.com/users/jlp-io/orgs').then(function(response) { console.log(response.data)});
   }
 
   changeSearchType(changeSearch) {
@@ -100,15 +103,9 @@ class App extends Component {
 				<button className="button-fancy" onClick={()=>this.changeSearchType('courseSearch')}>
 				Search by course
 				</button>
+				<br></br><br></br>
 				<InputBlock university={this.state.university} subject={this.state.subject} />				
 				</p>
-				<Button
-				bsStyle="danger"
-                name="Edit"
-                url="output"
-				href="https://www.facebook.com"
-				>link
-				</Button>
             </Col>
           </Row>
           <Row>
@@ -116,8 +113,7 @@ class App extends Component {
             </Col>
             <Col xs={6} sm={6} md={6} className="bs-button-right">
             </Col>
-          </Row>
-		  {/*<button onClick={drawMyPlot}>Click here</button>*/}
+          </Row>		
         </Grid>
       </div>
 	  </header>

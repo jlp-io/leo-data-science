@@ -2,33 +2,6 @@ import React, {Component} from 'react';
 import data from './Data'
 import Plotly from 'plotly.js-dist';
 
-var traceSingleLine = function(provider, sex, subject, name) {
-    
-    if (!name) {
-        name = "";
-    }
-
-    let list = data();
-
-    if (provider in list && subject in list[provider][sex]) {
-        var xVals = list[provider][sex][subject].years;
-        let yVals = list[provider][sex][subject].earnings;
-        let typeVal= 'scatter';
-        let nameVal = name;
-        
-        let trace = {};
-        trace.x = xVals;
-        trace.y = yVals;
-        trace.name = nameVal;
-        trace.type = typeVal;
-
-        return trace;
-    }
-    else {
-        return null;
-    }
-}
-
 // testing
 var drawMyPlot = function() {
     let providers = ["Imperial College of Science Technology and Medicine", "Aston University"]
@@ -61,6 +34,36 @@ var drawPlots = function(providers, subjects, divid) {
     });
 
     Plotly.plot(divid, traces, layout);
+}
+
+var traceSingleLine = function(provider, sex, subject, name) {
+
+    if (!name) {
+        name = "";
+    }
+
+    let list = data();
+	console.log(list)
+
+    if (provider in list && subject in list[provider][sex]) {
+        var xVals = list[provider][sex][subject].years;
+		console.log(xVals);
+        let yVals = list[provider][sex][subject].earnings;
+		console.log(yVals);
+        let typeVal= 'scatter';
+        let nameVal = name;
+        
+        let trace = {};
+        trace.x = xVals;
+        trace.y = yVals;
+        trace.name = nameVal;
+        trace.type = typeVal;
+
+        return trace;
+    }
+    else {
+        return null;
+    }
 }
 
 export default drawMyPlot;

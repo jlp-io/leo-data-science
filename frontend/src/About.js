@@ -34,12 +34,6 @@ class About extends Component {
           </Row>
 	      <Row>
             <Col sm={12} md={12}>
-                <p style={{textAlign: "center"}}>
-					About our project
-                </p>
-				<p style={{textAlign: "center"}}>
-					Sample text
-                </p>
             </Col>			
           </Row>
 		  
