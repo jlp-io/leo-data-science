@@ -4,9 +4,9 @@ import ParserForParameter from "./parseForParameters.js";
 import { BrowserRouter as Router, withRouter, Link, Route } from 'react-router-dom';
 
 export default class InputBlock extends Component {
-	
-	constructor(props){
-	super(props);
+  
+  constructor(props){
+  super(props);
     this.state = {
       csvparser: new ParserForParameter(this),
       universities: [],
@@ -24,26 +24,26 @@ export default class InputBlock extends Component {
   }
 
   handleChangeSelected(type, newValue){
-  	var newSelected = this.state.selected;
-  	console.log(type);
-  	console.log(newValue);
-  	newSelected[type] = newValue;
-  	this.setState({
-  		selected: newSelected
-  	});
+    var newSelected = this.state.selected;
+    console.log(type);
+    console.log(newValue);
+    newSelected[type] = newValue;
+    this.setState({
+      selected: newSelected
+    });
   }
 
   handleSubmit(event){
-  	event.preventDefault();
-  	var toReturn = this.state.selected;
-  	console.log(toReturn);
-  	var relData = this.state.csvparser.retrieveData(toReturn);
+    event.preventDefault();
+    var toReturn = this.state.selected;
+    console.log(toReturn);
+    var relData = this.state.csvparser.retrieveData(toReturn);
     console.log(relData);
-    this.setState({relevantData: relData});	
-  	return toReturn;
+    this.setState({relevantData: relData}); 
+    return toReturn;
   }
 
-	rerender(){
+  rerender(){
     var unis = this.state.csvparser.getUniversities();
     var subs = this.state.csvparser.getSubjects();
     this.setState({
@@ -51,35 +51,27 @@ export default class InputBlock extends Component {
       universities : unis,
       subjects: subs
     });
-	}
+  }
 
-	render(){
-		let inputForm1;
-		let inputForm2;
-		let inputForm3;
-		let inputForm4;
-		if (this.props.university == 'true') {
-			inputForm1 = <InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>;
-			inputForm2 = <input type="file" onChange={this.handleFileGet} ></input>
-			inputForm3 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Submit</button></Link></div>
-			inputForm4 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>
-		}
-		if (this.props.subject == 'true') {
-			inputForm1 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
-			inputForm2 = <input type="file" onChange={this.handleFileGet} ></input>
-			inputForm3 = <Link to={`/graph`}><button className="button-fancy-submit" type="submit">Submit</button></Link>
-			inputForm4 = <div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Graph</button></Link></div>
-		}
-		
-		return(
-			<div>
-				<form onSubmit = {this.handleSubmit}>
-				{inputForm1}
-				{inputForm2}
-				{inputForm3}
-				{inputForm4}
-				</form>					
-			</div>
-		);
-	}
+  render(){
+    let inputForm1;
+    let inputForm2;
+    if (this.props.university == 'true') {
+      inputForm1 = <InputForm selectionParameter = "University" options = {this.state.universities} id = "university" handleSubmitChange = {this.handleChangeSelected}/>;
+      inputForm2 = <input type="file" onChange={this.handleFileGet} ></input>
+    }
+    if (this.props.subject == 'true') {
+      inputForm1 = <InputForm selectionParameter = "Subject" options = {this.state.subjects} id = "subject" handleSubmitChange = {this.handleChangeSelected}/>;
+      inputForm2 = <input type="file" onChange={this.handleFileGet} ></input>
+    }
+    
+    return(
+      <div>
+        <form onSubmit = {this.handleSubmit}>
+        {inputForm1}
+        {inputForm2}
+        </form>         
+      </div>
+    );
+  }
 }
