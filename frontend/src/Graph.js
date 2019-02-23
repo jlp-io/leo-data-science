@@ -10,11 +10,10 @@ class Graph extends Component {
 		  hideButton: 'false'
 	  }
 	}
-
   
  render() {
    return (
-   		<div id="plotme" className="Graph"><header className="App-header"><a href="#" style={{textAlign: "center"}}><button className="button-fancy" onClick={drawMyPlot}> Click me </button></a></header></div>
+   		<div id="plotme" className="Graph"><header className="App-header"><a href="#" style={{textAlign: "center"}}><button className="button-fancy" onClick={drawMyPlot}> Click to graph </button></a></header></div>
    );
  }
 }

@@ -28,13 +28,12 @@ class App extends Component {
 		  searchType: "",
 		  university: false,
 		  subject: false,
-		  csvFile: 'https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/619435/SFR18_2017_Institution_subject_data.csv',
 		  metadataFile: 'https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/618557/SFR18_2017_metadata.txt'
 	  }
   }
   
   componentDidMount() {
-	  axios.get('-u jamie:password http://127.0.0.1:8000/users/').then(function(response) { console.log(response.data)});
+	  //axios test
  	  axios.get('https://api.github.com/users/jlp-io/orgs').then(function(response) { console.log(response.data)});
   }
 
@@ -45,24 +44,17 @@ class App extends Component {
 		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'courseSearch') {
-		this.setState({searchType: 'course'})
+		this.setState({searchType: 'course'});
 		this.setState({university: 'false'});
 		this.setState({subject: 'true'});
 	  }
 	  if (changeSearch == 'universitySearch') {
-		this.setState({searchType: 'university'})
-		axios.get('https://api.github.com/users/jlp-io/orgs')
-		.then(function (response) {
-		console.log(response.data);
-		})
+		this.setState({searchType: 'university'});
 		this.setState({university: 'true'});
 		this.setState({subject: 'false'});
 	  }
   }
   render() {
-
-    //var csvparser = new ParserForParameter();
-    //csvparser.getCSVString("SFR18_2017_Institution_subject_data.csv");
     return (
 	<header className="App-header">
 	<div className="page-body-grey">
@@ -79,33 +71,9 @@ class App extends Component {
           </Row>
           <Row>
             <Col sm={12} md={12}>
-				{/*
-                <p style={{textAlign: "center"}}>
-					Search courses
-                </p>
-				<p style={{textAlign: "center"}}>
-					Search by university
-                </p>
-                <p style={{textAlign: "center"}}>
-					Search by course
-                </p>
-				*/}
-
-				<p style={{textAlign: "center"}}>
-				<button className="button-fancy" onClick={()=>this.changeSearchType('singleSearch')}>
-					Search courses
-                </button>
-				<br></br><br></br>
-				<button className="button-fancy" onClick={()=>this.changeSearchType('universitySearch')}>
-					Search by university
-                </button>
-				<br></br><br></br>
-				<button className="button-fancy" onClick={()=>this.changeSearchType('courseSearch')}>
-				Search by course
-				</button>
-				<br></br><br></br>
-				<InputBlock university={this.state.university} subject={this.state.subject} />				
-				</p>
+				<InputBlock university={'true'} subject={'false'} />								
+				<InputBlock university={'false'} subject={'true'} />	
+				<div id="plotme" className="Graph"><Link to={`/graph`}><button className="button-fancy" type="submit">Submit</button></Link></div>
             </Col>
           </Row>
           <Row>
